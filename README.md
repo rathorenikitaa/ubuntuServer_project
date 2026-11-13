@@ -18,12 +18,10 @@ Deployment Execution:
 
    Command: sudo apt update
    <img width="1469" height="539" alt="Screenshot 2026-11-12 172721" src="https://github.com/user-attachments/assets/e3467f83-4b71-471b-a02d-7ae1a019a8bc" />
-Command: sudo apt install openssh-server -y
- <img>
  * Service Initialization: The SSH service was activated and configured to persist across system reboots to maintain infrastructure stability.
-
-Command: sudo systemctl start ssh
+Command: sudo apt install openssh-server -y
  sudo systemctl enable ssh
+<img width="1112" height="332" alt="image" src="https://github.com/user-attachments/assets/66d982c6-0fb1-4477-9265-c57f79f9e45a" />
 
  * Service Verification: The operational status of the daemon was validated to ensure it was actively listening for connections.
 Command: systemctl status ssh
