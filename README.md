@@ -8,20 +8,22 @@ This documentation outlines the deployment of a secure remote administration env
 Environment Architecture
  * Host Server: Ubuntu Linux
  * Client Workstation: Windows 10 / 11
- * Core Technologies: OpenSSH, UFW (Uncomplicated Firewall), Linux User Management Utilities
+ * Core Technologies: OpenSSH, Linux User Management Utilities
 1. SSH Server Deployment (Ubuntu)
 To enable headless remote administration, the OpenSSH server was installed and secured on the target Ubuntu machine.
 Deployment Execution:
  * Package Installation: The standard openssh-server package was retrieved and installed via the APT package manager.
-   sudo apt update
-sudo apt install openssh-server -y
-
+   Command: sudo apt update
+   <img width="1469" height="539" alt="Screenshot 2026-11-12 172721" src="https://github.com/user-attachments/assets/e3467f83-4b71-471b-a02d-7ae1a019a8bc" />
+Command: sudo apt install openssh-server -y
+ <img>
  * Service Initialization: The SSH service was activated and configured to persist across system reboots to maintain infrastructure stability.
-   sudo systemctl start ssh
-sudo systemctl enable ssh
+Command: sudo systemctl start ssh
+ sudo systemctl enable ssh
 
  * Service Verification: The operational status of the daemon was validated to ensure it was actively listening for connections.
-   systemctl status ssh
+Command: systemctl status ssh
+<img width="1059" height="533" alt="Screenshot 2026-11-12 173412" src="https://github.com/user-attachments/assets/e2c4ba9f-2ae1-4837-9831-326e0be45833" />
 
  * Network Security: The local firewall (UFW) was updated to explicitly permit inbound SSH traffic on port 22, ensuring legitimate remote traffic is not dropped.
    sudo ufw allow ssh
