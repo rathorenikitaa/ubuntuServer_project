@@ -9,6 +9,8 @@ Environment Architecture
  * Host Server: Ubuntu Linux
  * Client Workstation: Windows 10 / 11
  * Core Technologies: OpenSSH, Linux User Management Utilities
+
+
 1. SSH Server Deployment (Ubuntu)
 To enable headless remote administration, the OpenSSH server was installed and secured on the target Ubuntu machine.
 Deployment Execution:
