@@ -13,11 +13,13 @@ Environment Architecture
 To enable headless remote administration, the OpenSSH server was installed and secured on the target Ubuntu machine.
 Deployment Execution:
  * Package Installation: The standard openssh-server package was retrieved and installed via the APT package manager.
+
    Command: sudo apt update
    <img width="1469" height="539" alt="Screenshot 2026-11-12 172721" src="https://github.com/user-attachments/assets/e3467f83-4b71-471b-a02d-7ae1a019a8bc" />
 Command: sudo apt install openssh-server -y
  <img>
  * Service Initialization: The SSH service was activated and configured to persist across system reboots to maintain infrastructure stability.
+
 Command: sudo systemctl start ssh
  sudo systemctl enable ssh
 
@@ -28,11 +30,13 @@ Command: systemctl status ssh
  * Network Security: The local firewall (UFW) was updated to explicitly permit inbound SSH traffic on port 22, ensuring legitimate remote traffic is not dropped.
    sudo ufw allow ssh
 
+
 2. Remote Client Connection (Windows)
 Remote access was established using the native Windows SSH client, simulating a standard engineering workflow for server maintenance.
 Connection Protocol:
  * A terminal session was initiated from the Windows workstation targeting the Ubuntu server's IPv4 address.
-   ssh username@<ubuntu_ip_address>
+
+command : ssh username@<ubuntu_ip_address>
 
  * Upon initial connection, the server's ECDSA key fingerprint was verified and appended to the Windows client's known_hosts file to establish cryptographic trust.
  * Password authentication was utilized to access the primary administrative account via the remote shell.
