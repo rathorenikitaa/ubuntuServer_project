@@ -28,9 +28,9 @@ Command: sudo apt install openssh-server -y
 Command: systemctl status ssh
 <img width="1059" height="533" alt="Screenshot 2026-11-12 173412" src="https://github.com/user-attachments/assets/e2c4ba9f-2ae1-4837-9831-326e0be45833" />
 
- * Network Security: The local firewall (UFW) was updated to explicitly permit inbound SSH traffic on port 22, ensuring legitimate remote traffic is not dropped.
+ ##########* Network Security: The local firewall (UFW) was updated to explicitly permit inbound SSH traffic on port 22, ensuring legitimate remote traffic is not dropped.
    sudo ufw allow ssh
-
+########################
 
 2. Remote Client Connection (Windows)
 Remote access was established using the native Windows SSH client, simulating a standard engineering workflow for server maintenance.
@@ -41,6 +41,7 @@ command : ssh username@<ubuntu_ip_address>
 
  * Upon initial connection, the server's ECDSA key fingerprint was verified and appended to the Windows client's known_hosts file to establish cryptographic trust.
  * Password authentication was utilized to access the primary administrative account via the remote shell.
+
 3. User Lifecycle Management
 Following the successful remote connection, user administration procedures were executed directly from the Windows client to implement role-based access on the Linux host.
 Execution Steps:
@@ -55,6 +56,7 @@ Execution Steps:
 sudo whoami
 
    (Expected output confirmed as root, validating successful sudo group assignment).
+   
 Security & Maintenance Principles Applied
  * Deployed robust remote management infrastructure, eliminating reliance on physical console access.
  * Enforced the principle of least privilege by provisioning standard user accounts for daily operations and restricting direct root access.
