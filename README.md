@@ -42,14 +42,19 @@ command : ssh nikita@<ubuntu_ip_address>
 Following the successful remote connection, user administration procedures were executed directly from the Windows client to implement role-based access on the Linux host.
 Execution Steps:
  * Account Provisioning: A secondary user account (newadmin) was provisioned. The utility automatically generated the required home directory structure and prompted for password credentials.
+ 
  Command: sudo adduser newadmin
+<img width="957" height="270" alt="image" src="https://github.com/user-attachments/assets/3dab23b9-39af-4d88-8aa6-74ce76c0e496" />
 
  * Privilege Escalation Assignment: The newly created account was appended to the sudo group, granting it administrative capabilities for future system configuration tasks.
    sudo usermod -aG sudo newadmin
+<img width="727" height="257" alt="image" src="https://github.com/user-attachments/assets/71c7f423-d456-41b7-b2cc-bc84d27ff2c4" />
 
  * Verification: The active session was transitioned to the newly created account to validate functionality and test elevated permissions.
-   su - newadmin
+command:
+su - newadmin
 sudo whoami
+<img width="477" height="146" alt="image" src="https://github.com/user-attachments/assets/020aebfc-02b5-4280-b1e4-d2baa4402064" />
 
    (Expected output confirmed as root, validating successful sudo group assignment).
    
