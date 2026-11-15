@@ -26,18 +26,14 @@ Command: sudo apt install openssh-server -y
 
  * Service Verification: The operational status of the daemon was validated to ensure it was actively listening for connections.
 Command: systemctl status ssh
-<img width="1059" height="533" alt="Screenshot 2026-11-12 173412" src="https://github.com/user-attachments/assets/e2c4ba9f-2ae1-4837-9831-326e0be45833" />
-
- ##########* Network Security: The local firewall (UFW) was updated to explicitly permit inbound SSH traffic on port 22, ensuring legitimate remote traffic is not dropped.
-   sudo ufw allow ssh
-########################
+<img width="907" height="466" alt="Screenshot 2026-11-15 140814" src="https://github.com/user-attachments/assets/c16635dd-4af7-42af-b634-5e662c89e156" />
 
 2. Remote Client Connection (Windows)
 Remote access was established using the native Windows SSH client, simulating a standard engineering workflow for server maintenance.
 Connection Protocol:
  * A terminal session was initiated from the Windows workstation targeting the Ubuntu server's IPv4 address.
-
-command : ssh username@<ubuntu_ip_address>
+<img width="775" height="637" alt="Screenshot 2026-11-15 141945" src="https://github.com/user-attachments/assets/b87587e5-fa25-4f2c-a73a-a5dfbbd6b0be" />
+command : ssh nikita@<ubuntu_ip_address>
 
  * Upon initial connection, the server's ECDSA key fingerprint was verified and appended to the Windows client's known_hosts file to establish cryptographic trust.
  * Password authentication was utilized to access the primary administrative account via the remote shell.
@@ -46,7 +42,7 @@ command : ssh username@<ubuntu_ip_address>
 Following the successful remote connection, user administration procedures were executed directly from the Windows client to implement role-based access on the Linux host.
 Execution Steps:
  * Account Provisioning: A secondary user account (newadmin) was provisioned. The utility automatically generated the required home directory structure and prompted for password credentials.
-   sudo adduser newadmin
+ Command: sudo adduser newadmin
 
  * Privilege Escalation Assignment: The newly created account was appended to the sudo group, granting it administrative capabilities for future system configuration tasks.
    sudo usermod -aG sudo newadmin
