@@ -33,7 +33,9 @@ Command: systemctl status ssh
 Remote access was established using the native Windows SSH client, simulating a standard engineering workflow for server maintenance.
 Connection Protocol:
  * A terminal session was initiated from the Windows workstation targeting the Ubuntu server's IPv4 address.
+
 <img width="775" height="637" alt="Screenshot 2026-11-15 141945" src="https://github.com/user-attachments/assets/b87587e5-fa25-4f2c-a73a-a5dfbbd6b0be" />
+
 command : ssh nikita@<ubuntu_ip_address>
  * Password authentication was utilized to access the primary administrative account via the remote shell.
 
@@ -46,7 +48,8 @@ Execution Steps:
 <img width="957" height="270" alt="image" src="https://github.com/user-attachments/assets/3dab23b9-39af-4d88-8aa6-74ce76c0e496" />
 
  * Privilege Escalation Assignment: The newly created account was appended to the sudo group, granting it administrative capabilities for future system configuration tasks.
-   sudo usermod -aG sudo newadmin
+
+command: sudo usermod -aG sudo newadmin
 <img width="727" height="257" alt="image" src="https://github.com/user-attachments/assets/71c7f423-d456-41b7-b2cc-bc84d27ff2c4" />
 
  * Verification: The active session was transitioned to the newly created account to validate functionality and test elevated permissions.
