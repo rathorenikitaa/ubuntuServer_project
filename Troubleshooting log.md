@@ -73,30 +73,6 @@ Fix:
 3.  Checked that the VMware NAT Service and VMware DHCP Service are running on Windows (services.msc), and that VMnet8 exists in the Virtual Network Editor.
 
 Result: ens33 came UP, received an address, and internet access worked, so apt update and the SSH install could proceed.
-Lesson: Troubleshoot in layers. Layer 1 (is the cable or adapter connected?) comes before addressing, routing and DNS.
-Final working configuration
-
-/etc/netplan/50-cloud-init.yaml (spaces only, never tabs):
-network:
-  version: 2
-  ethernets:
-    ens33:
-      dhcp4: true
-    ens34:
-      addresses:
-        - 192.168.73.10/24
-Apply and verify:
-sudo netplan apply
-ip -br a
-ip route
-ping -c 3 8.8.8.8
-ping -c 3 google.com
-sudo apt update
-sudo systemctl status ssh
-
-Connect from Windows PowerShell:
-ssh nikita@192.168.73.10
-
 
 # Troubleshooting method I now follow
 1.  Is the link up? ip -br a and ip link show (look for DOWN or NO-CARRIER).
